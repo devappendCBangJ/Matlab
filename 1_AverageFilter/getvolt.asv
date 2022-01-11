@@ -1,0 +1,4 @@
+function z = getvolt()
+
+w = 0+randn(1,1); % randn(m, n) : mxn 평균0 정규분포
+z = 14 + w;
