@@ -1,5 +1,5 @@
 %%%% 실제 이부분만 그대로 사용
-function avg = MovAvgFilter(x)
+function avg = LowPassFilter(x)
 
 % 변수 선언
 persistent preAvg n xbuf
@@ -24,7 +24,7 @@ end
 xbuf(n+1) = x;
 
 % 평균 이동 필터
-avg = preAvg + (x - xbuf(1)) / n;
+avg = preAvg + (1.2) * (x - xbuf(1)) / n;
     % 예를 들어 [1,2,3,4,5] -> [2,3,4,5,6] -> ... 차례대로 변경될 경우
     % 필터적인 관점에서 보면, 5개중 중간에 3개인 2,3,4는 그대로 있고, 첫번째 값(1)이 빠져나가고 새로운값이 1개(6) 추가되는 형태
     % 이것이 x(새로운값) , xbuf(1)(첫번째값)에 대응되어, Moving Average의 평균인 avg를 구해주는 코드

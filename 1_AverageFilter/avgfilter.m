@@ -8,7 +8,7 @@ function avg = avgfilter(x) % 출력값 = 함수명(인자)
 persistent preavg k
 persistent firstrun
 
-% 변수값 초기화 : 함수가 불러질때마다 초기화 시키면 안되니까 플래그 필요
+% 변수값 초기화 : 함수가 불러질때마다 초기화 시키면 안되니까 플래그 필요 ♣
 if isempty(firstrun) % isempty(배열) : 배열이 비어있는가?
     preavg=0;
     k=1;
@@ -16,9 +16,10 @@ if isempty(firstrun) % isempty(배열) : 배열이 비어있는가?
     firstrun=1;
 end
 
-% 평균 필터
+% 평균 필터 ♣
 alpha = (k-1)/k;
 avg = alpha * preavg + (1-alpha) * x;
+    % alpha = (k-1)/k;
 
 preavg = avg;
 k = k+1;
