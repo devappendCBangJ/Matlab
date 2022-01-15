@@ -24,5 +24,5 @@ end
 figure
 plot(t, xmsaved, 'r:*')
 hold on
-plot(t,avgsaved,'o-')
+plot(t,avgsaved,'bo-')
 legend('measured','average')
